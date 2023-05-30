@@ -39,8 +39,8 @@ jobs:
         run: |
           pip install -r requeriments.txt
           
-       - name: Aws configure
-         run: |
+      - name: Aws
+        run: |
           curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
           unzip awscliv2.zip
           sudo ./aws/install
