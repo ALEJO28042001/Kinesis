@@ -38,7 +38,15 @@ jobs:
       - name: Instalacion de dependencias necesarias en Python
         run: |
           pip install -r requeriments.txt
+          
+       - name: Aws configure
+         run: |
+          curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+          unzip awscliv2.zip
+          sudo ./aws/install
+          aws configure import --csv credenciales.csv
         
       - name: Pruebas unitarias
         run: |
           pytest
+          
